@@ -15,7 +15,8 @@
         "LCD.ts",
         "KeyPad.ts",
         "Motor.ts",
-        "Analog.ts"
+        "Analog.ts",
+        "ExtraLed.ts"
     ],
     "testFiles": [
         "test.ts"

@@ -54,4 +54,64 @@ namespace ThinkBox {
             }
         }
     }
+
+    //% subcategory=Motor
+    //% blockId=Motor block="Motor Stop"
+    //% weight=100
+    export function stop() {
+        MotorRun(Motors.M1, 0)
+        MotorRun(Motors.M2, 0)
+    }
+
+    //% subcategory=Motor
+    //% blockId=Motor block="Forward|speed %speed |interval %interval"
+    //% speed eg: 150
+    //% weight=100
+    //% speed.min=-255 speed.max=255
+    //% interval eg: 100
+    export function forward(speed: number, interval: number) {
+        MotorRun(Motors.M1, speed)
+        MotorRun(Motors.M2, speed)
+        basic.pause(interval)
+        stop()
+    }
+
+    //% subcategory=Motor
+    //% blockId=Motor block="Back|speed %speed |interval %interval"
+    //% speed eg: 150
+    //% weight=100
+    //% speed.min=-255 speed.max=255
+    //% interval eg: 100
+    export function back(speed: number, interval: number) {
+        MotorRun(Motors.M1, -speed)
+        MotorRun(Motors.M2, -speed)
+        basic.pause(interval)
+        stop()
+    }
+
+    //% subcategory=Motor
+    //% blockId=Motor block="Turn Left|speed %speed |interval %interval"
+    //% speed eg: 150
+    //% weight=100
+    //% speed.min=-255 speed.max=255
+    //% interval eg: 100
+    export function left(speed: number, interval: number) {
+        MotorRun(Motors.M1, speed)
+        MotorRun(Motors.M2, -speed)
+        basic.pause(interval)
+        stop()
+    }
+
+    //% subcategory=Motor
+    //% blockId=Motor block="Turn Right|speed %speed |interval %interval"
+    //% speed eg: 150
+    //% weight=100
+    //% speed.min=-255 speed.max=255
+    //% interval eg: 100
+    export function right(speed: number, interval: number) {
+        MotorRun(Motors.M1, -speed)
+        MotorRun(Motors.M2, speed)
+        basic.pause(interval)
+        stop()
+    }
 }
