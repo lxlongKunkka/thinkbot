@@ -10,7 +10,9 @@
         "main.blocks",
         "main.ts",
         "README.md",
-        "thinkbox.ts"
+        "thinkbox.ts",
+        "Servo.ts",
+        "LCD.ts"
     ],
     "testFiles": [
         "test.ts"
