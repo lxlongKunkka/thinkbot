@@ -20,10 +20,10 @@ namespace ThinkBox {
     let KEYSCAN = 0;
     
     //% subcategory=KeyPad
-    //% blockID==Listen_Key
-    //% block="Listen_Key"
+    //% blockID==KeyPad
+    //% block="ListenKeyPad"
     //% weight=90
-    export function Read74HC165(): void {
+    export function ListenKeyPad(): void {
         pins.setPull(INSR0_DATA, PinPullMode.PullUp)
         FullOff(INSR_LATCH);
         control.waitMicros(25000);
@@ -46,7 +46,7 @@ namespace ThinkBox {
     //% blockID==Listen_Key
     //% block="Key %pin |Press"
     //% weight=90
-    export function Listen_Key(pin: KEY): boolean {
+    export function ReadKeyPad(pin: KEY): boolean {
         let res = (KEYSCAN >> pin) & 0x01;
         if (res == 1) {
             return false;
