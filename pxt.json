@@ -12,7 +12,10 @@
         "README.md",
         "thinkbox.ts",
         "Servo.ts",
-        "LCD.ts"
+        "LCD.ts",
+        "KeyPad.ts",
+        "Motor.ts",
+        "Analog.ts"
     ],
     "testFiles": [
         "test.ts"

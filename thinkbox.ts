@@ -3,7 +3,7 @@
  *
 */
 
-//% weight=100 color=#c650d0 icon="\uf113"
+//% weight=100 color=#3333ff icon="\uf113"
 namespace ThinkBox {
     
 }
