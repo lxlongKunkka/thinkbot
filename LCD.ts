@@ -56,7 +56,7 @@ namespace ThinkBox {
     //% subcategory=LCD
     //% blockId=LCD_Init
     //% blockGap=8
-    //% block="LCD1IN8 Init"
+    //% block="LCD Init"
     //% weight=200
     export function LCD_Init(): void {
         control.waitMicros(1000);

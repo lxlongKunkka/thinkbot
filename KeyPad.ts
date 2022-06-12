@@ -14,6 +14,7 @@ enum KEY {
     A = 12,
     B = 13,
     MENU = 14,
+    NONE = -1
 };
 
 namespace ThinkBox {
@@ -47,6 +48,10 @@ namespace ThinkBox {
     //% block="Key %pin |Press"
     //% weight=90
     export function ReadKeyPad(pin: KEY): boolean {
+        if(pin == KEY.NONE)
+        {
+            return true;
+        }
         let res = (KEYSCAN >> pin) & 0x01;
         if (res == 1) {
             return false;

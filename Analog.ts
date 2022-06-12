@@ -9,8 +9,6 @@ enum AO {
 }
 
 namespace ThinkBox {
-    let KEYSCAN = 0;
-
     //% subcategory=Analog
     //% blockID==Analog
     //% block="DAC %val"
