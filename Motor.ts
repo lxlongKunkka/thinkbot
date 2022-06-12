@@ -72,6 +72,10 @@ namespace ThinkBox {
     export function forward(speed: number, interval: number) {
         MotorRun(Motors.M1, speed)
         MotorRun(Motors.M2, speed)
+        if(interval == 0)
+        {
+            return;
+        }
         basic.pause(interval)
         stop()
     }
@@ -85,6 +89,9 @@ namespace ThinkBox {
     export function back(speed: number, interval: number) {
         MotorRun(Motors.M1, -speed)
         MotorRun(Motors.M2, -speed)
+        if (interval == 0) {
+            return;
+        }
         basic.pause(interval)
         stop()
     }
@@ -98,6 +105,9 @@ namespace ThinkBox {
     export function left(speed: number, interval: number) {
         MotorRun(Motors.M1, speed)
         MotorRun(Motors.M2, -speed)
+        if (interval == 0) {
+            return;
+        }
         basic.pause(interval)
         stop()
     }
@@ -111,6 +121,9 @@ namespace ThinkBox {
     export function right(speed: number, interval: number) {
         MotorRun(Motors.M1, -speed)
         MotorRun(Motors.M2, speed)
+        if (interval == 0) {
+            return;
+        }
         basic.pause(interval)
         stop()
     }

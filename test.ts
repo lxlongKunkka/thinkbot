@@ -58,13 +58,13 @@ radio.setGroup(1)
 
 radio.onReceivedString(function (receivedString) {
     if (receivedString == "forward") {
-        ThinkBox.forward(200, 200)
+        ThinkBox.forward(200, 0)
     } else if (receivedString == "back") {
-        ThinkBox.back(200, 200)
+        ThinkBox.back(200, 0)
     } else if (receivedString == "left") {
-        ThinkBox.left(200, 200)
+        ThinkBox.left(200, 0)
     } else if (receivedString == "right") {
-        ThinkBox.right(200, 200)
+        ThinkBox.right(200, 0)
     } else if (receivedString == "stop") {
         ThinkBox.stop()
     }
