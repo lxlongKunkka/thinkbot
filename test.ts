@@ -30,26 +30,27 @@ basic.forever(function() {
     ThinkBox.ListenKeyPad()
     if (ThinkBox.ReadKeyPad(KEY.UP)) 
     {
-        ThinkBox.forward(200, 100)
+        ThinkBox.forward(200, 0)
         basic.showArrow(ArrowNames.North)
     }
     else if (ThinkBox.ReadKeyPad(KEY.DOWN))
     {
-        ThinkBox.back(200, 100)
+        ThinkBox.back(200, 0)
         basic.showArrow(ArrowNames.South)
     }
     else if (ThinkBox.ReadKeyPad(KEY.LEFT)) 
     {
-        ThinkBox.left(200, 100)
+        ThinkBox.left(200, 0)
         basic.showArrow(ArrowNames.West)
     }
     else if (ThinkBox.ReadKeyPad(KEY.RIGHT)) 
     {
-        ThinkBox.right(200, 100)
+        ThinkBox.right(200, 0)
         basic.showArrow(ArrowNames.East)
     }
     else if(ThinkBox.ReadKeyPad(KEY.NONE))
     {
+        ThinkBox.stop()
         basic.showIcon(IconNames.Heart)
     }
 })
