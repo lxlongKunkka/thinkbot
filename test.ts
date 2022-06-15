@@ -26,8 +26,6 @@ ThinkBox.DrawPoint(120, 20, 50000, DOT_PIXEL.DOT_PIXEL_4)
 ThinkBox.DrawLine(10, 10, 110, 110, 40000, DOT_PIXEL.DOT_PIXEL_2, LINE_STYLE.LINE_SOLID)
 ThinkBox.DrawCircle(80, 60, 30, 30000, DRAW_FILL.DRAW_EMPTY, DOT_PIXEL.DOT_PIXEL_1)
 
-let cur = "stop"
-
 basic.forever(function() {
     ThinkBox.ListenKeyPad()
     if (ThinkBox.ReadKeyPad(KEY.UP)) 
@@ -60,31 +58,14 @@ basic.forever(function() {
 radio.setGroup(1)
 radio.onReceivedString(function (receivedString) {
     if (receivedString == "forward") {
-        if(cur != "forward")
-        {
-            cur = "forward"
             ThinkBox.forward(200, 0)
-        }
     } else if (receivedString == "back") {
-        if(cur != "back")
-        {
-            cur = "back"
             ThinkBox.back(200, 0)
-        }
     } else if (receivedString == "left") {
-        if(cur != "left")
-        {
-            cur = "left"
             ThinkBox.left(200, 0)
-        }
     } else if (receivedString == "right") {
-        if(cur != "right")
-        {
-            cur = "right"
             ThinkBox.right(200, 0)
-        }
     } else if (receivedString == "stop") {
         ThinkBox.stop()
-        cur = "right"
     }
 })
