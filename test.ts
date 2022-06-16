@@ -25,7 +25,13 @@ ThinkBox.LCD_SetBL(4000)
 ThinkBox.DrawPoint(120, 20, 50000, DOT_PIXEL.DOT_PIXEL_4)
 ThinkBox.DrawLine(10, 10, 110, 110, 40000, DOT_PIXEL.DOT_PIXEL_2, LINE_STYLE.LINE_SOLID)
 ThinkBox.DrawCircle(80, 60, 30, 30000, DRAW_FILL.DRAW_EMPTY, DOT_PIXEL.DOT_PIXEL_1)
-
+let strip = neopixel.create(DigitalPin.P2, 4, NeoPixelMode.RGB)
+strip.setBrightness(5)
+strip.showRainbow(1, 180)
+loops.everyInterval(500, function() {
+    strip.rotate()
+    strip.show()
+})
 basic.forever(function() {
     ThinkBox.ListenKeyPad()
     if (ThinkBox.ReadKeyPad(KEY.UP)) 
