@@ -54,7 +54,7 @@ basic.forever(function() {
         ThinkBox.right(200, 0)
         basic.showArrow(ArrowNames.East)
     }
-    else if(ThinkBox.ReadKeyPad(KEY.NONE))
+    else if(ThinkBox.ReadKeyPad(KEY.A))
     {
         ThinkBox.stop()
         basic.showIcon(IconNames.Heart)
@@ -62,16 +62,38 @@ basic.forever(function() {
 })
 
 radio.setGroup(1)
+
+let cur = "stop"
 radio.onReceivedString(function (receivedString) {
     if (receivedString == "forward") {
+        if(cur != "forward")
+        {
             ThinkBox.forward(200, 0)
+            cur = "forward"
+        }
     } else if (receivedString == "back") {
+        if(cur != "back")
+        {
             ThinkBox.back(200, 0)
+            cur = "back"
+        }
     } else if (receivedString == "left") {
+        if(cur != "left")
+        {
             ThinkBox.left(200, 0)
+            cur = "left"
+        }
     } else if (receivedString == "right") {
+        if(cur != "right")
+        {
             ThinkBox.right(200, 0)
+            cur = "right"
+        }
     } else if (receivedString == "stop") {
-        ThinkBox.stop()
+        if(cur != "stop")
+        {
+            ThinkBox.stop()
+            cur = "stop"
+        }
     }
 })
