@@ -47,9 +47,6 @@ namespace ThinkBox {
         for (let i = 0; i < 4; i++) {
             res[i] = pins.i2cReadNumber(PCF8591_ADDRESS, NumberFormat.UInt8LE, false);
         }
-        for (let i = 0; i < 4; i++) {
-            serial.writeValue(i.toString(), res[i])
-        }
         return res;
     }
 }

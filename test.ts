@@ -101,16 +101,33 @@ radio.onReceivedString(function (receivedString) {
 basic.forever(function() {
     if (input.buttonIsPressed(Button.A)) 
     {
-        ThinkBox.DrawPoint(20, 100, 0xF800, DOT_PIXEL.DOT_PIXEL_4)
+        ThinkBox.DrawCircle(20, 100, 2, 0xF800, DRAW_FILL.DRAW_FULL, DOT_PIXEL.DOT_PIXEL_1)
     }
     else
     {
-        ThinkBox.DrawPoint(20, 100, 0X8430, DOT_PIXEL.DOT_PIXEL_4)
+        ThinkBox.DrawCircle(20, 100, 2, 0X8430, DRAW_FILL.DRAW_FULL, DOT_PIXEL.DOT_PIXEL_1)
     }
     if (input.buttonIsPressed(Button.B)) {
-        ThinkBox.DrawPoint(140, 100, 0xF800, DOT_PIXEL.DOT_PIXEL_4)
+        ThinkBox.DrawCircle(140, 100, 2, 0xF800, DRAW_FILL.DRAW_FULL, DOT_PIXEL.DOT_PIXEL_1)
     }
     else {
-        ThinkBox.DrawPoint(140, 100, 0X8430, DOT_PIXEL.DOT_PIXEL_4)
+        ThinkBox.DrawCircle(140, 100, 2, 0X8430, DRAW_FILL.DRAW_FULL, DOT_PIXEL.DOT_PIXEL_1)
+    }
+})
+
+basic.forever(function() {
+    let a = [-1, -1, -1, -1];
+    a = ThinkBox.ScanAllChannel()
+    for(let i=0; i<4; i++)
+    {
+        a[i] = a[i] / 255 * 3.3
+        if(a[i] <= 0.5)
+        {
+            ThinkBox.DrawCircle(i * 40 + 20, 60, 2, 0X8430, DRAW_FILL.DRAW_FULL, DOT_PIXEL.DOT_PIXEL_1)
+        }
+        else
+        {
+            ThinkBox.DrawCircle(i * 40 + 20, 60, 2, 0xF800, DRAW_FILL.DRAW_FULL, DOT_PIXEL.DOT_PIXEL_1)
+        }
     }
 })
