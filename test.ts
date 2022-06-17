@@ -97,3 +97,20 @@ radio.onReceivedString(function (receivedString) {
         }
     }
 })
+
+basic.forever(function() {
+    if (input.buttonIsPressed(Button.A)) 
+    {
+        ThinkBox.DrawPoint(20, 100, 0xF800, DOT_PIXEL.DOT_PIXEL_4)
+    }
+    else
+    {
+        ThinkBox.DrawPoint(20, 100, 0X8430, DOT_PIXEL.DOT_PIXEL_4)
+    }
+    if (input.buttonIsPressed(Button.B)) {
+        ThinkBox.DrawPoint(140, 100, 0xF800, DOT_PIXEL.DOT_PIXEL_4)
+    }
+    else {
+        ThinkBox.DrawPoint(140, 100, 0X8430, DOT_PIXEL.DOT_PIXEL_4)
+    }
+})
