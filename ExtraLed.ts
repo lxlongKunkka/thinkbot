@@ -9,7 +9,7 @@ namespace ThinkBox{
     let led_state: number[] = [0, 0, 0, 0];
     
     //% subcategory=ExtraLed
-    //% blockId=ExtraLed block="LED|led %led ON"
+    //% blockId=LED_ON block="LED|led %led ON"
     //% weight=100
     export function LED_ON(led: LEDS) {
         if (led <= 2) {
@@ -22,7 +22,7 @@ namespace ThinkBox{
     }
 
     //% subcategory=ExtraLed
-    //% blockId=ExtraLed block="LED|led %led OFF"
+    //% blockId=LED_OFF block="LED|led %led OFF"
     //% weight=100
     export function LED_OFF(led: LEDS) {
         if (led <= 2) {
@@ -35,7 +35,7 @@ namespace ThinkBox{
     }
 
     //% subcategory=ExtraLed
-    //% blockId=ExtraLed block="LED|led %led TOGGLE"
+    //% blockId=LED_TOGGLE block="LED|led %led TOGGLE"
     //% weight=100
     export function LED_TOGGLE(led: LEDS) {
         if (led_state[led]) {
