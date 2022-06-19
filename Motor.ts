@@ -19,7 +19,7 @@ enum Motors {
 namespace ThinkBox {
 
     //% subcategory=Motor
-    //% blockId=Motor block="Motor|%index|speed %speed"
+    //% blockId=MotorRun block="Motor|%index|speed %speed"
     //% speed eg: 150
     //% weight=100
     //% speed.min=-255 speed.max=255
@@ -56,7 +56,7 @@ namespace ThinkBox {
     }
 
     //% subcategory=Motor
-    //% blockId=Motor block="Motor Stop"
+    //% blockId=MotorStop block="Motor Stop"
     //% weight=100
     export function stop() {
         MotorRun(Motors.M1, 0)
@@ -64,7 +64,7 @@ namespace ThinkBox {
     }
 
     //% subcategory=Motor
-    //% blockId=Motor block="Forward|speed %speed |interval %interval"
+    //% blockId=Motorforward block="Forward|speed %speed |interval %interval"
     //% speed eg: 150
     //% weight=100
     //% speed.min=-255 speed.max=255
@@ -81,7 +81,7 @@ namespace ThinkBox {
     }
 
     //% subcategory=Motor
-    //% blockId=Motor block="Back|speed %speed |interval %interval"
+    //% blockId=Motorback block="Back|speed %speed |interval %interval"
     //% speed eg: 150
     //% weight=100
     //% speed.min=-255 speed.max=255
@@ -97,7 +97,7 @@ namespace ThinkBox {
     }
 
     //% subcategory=Motor
-    //% blockId=Motor block="Turn Left|speed %speed |interval %interval"
+    //% blockId=Motorleft block="Turn Left|speed %speed |interval %interval"
     //% speed eg: 150
     //% weight=100
     //% speed.min=-255 speed.max=255
@@ -113,7 +113,7 @@ namespace ThinkBox {
     }
 
     //% subcategory=Motor
-    //% blockId=Motor block="Turn Right|speed %speed |interval %interval"
+    //% blockId=Motorright block="Turn Right|speed %speed |interval %interval"
     //% speed eg: 150
     //% weight=100
     //% speed.min=-255 speed.max=255
